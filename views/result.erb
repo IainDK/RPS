@@ -1,0 +1,13 @@
+<h2><%= @game.player.name %> vs <%= @game.computer.name %></h2>
+
+<h2><%= @game.player.name %> chose <%= @game.player.weapon.capitalize %></h2>
+
+<h2><%= @game.computer.name %> chose <%= @game.computer.weapon.capitalize %></h2>
+
+<% if @game.outcome == Game::POSSIBLE_OUTCOMES[0] %>
+     <p> Congratulations, you win!</p>
+<% elsif @game.outcome == Game::POSSIBLE_OUTCOMES[1] %>
+     <p> It's a tie! </p>
+<% else %>
+     <p> You lost this time. </p>
+<% end %>
