@@ -1,15 +1,29 @@
+html {
+  height: 100%
+}
+
 body {
   background-color: #f4f1ec;
 }
 
- .rps_title {
+input[type="radio"]{
+  margin: 0 5px 0 10px;
+}
+
+table.center {
+    margin-left:auto;
+    margin-right:auto;
+    }
+
+ .title {
    padding-top: 40px;
    text-align: center;
-   font-family: 'Indie Flower', cursive;
+   font-family: 'Raleway', sans-serif;
    color: #6495ED;
+   padding-bottom: 100px;
  }
 
-.input_name {
+.input_name_button {
   position: fixed;
   text-align: center;
   top: 50%;
@@ -18,9 +32,66 @@ body {
   margin-left: -100px;
 }
 
-.play_title {
+.play_button {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.p1_vs_p2 {
   padding-top: 40px;
   text-align: center;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Raleway', sans-serif;
+  color: #B0C4DE;
+  padding-bottom: 100px;
+}
+
+.player_chose {
   color: #6495ED;
+  float: left;
+  padding-left: 200px;
+}
+
+
+.computer_chose {
+  color: #FFA07A;
+  float: right;
+  padding-right: 50px;
+}
+
+.victory_message {
+  color: #8FBC8F;
+  text-align: center;
+  bottom: 0px;
+  width: 100%;
+  padding-bottom: 300px;
+  position: fixed;
+}
+
+.tie_message {
+  color: #FFDEAD;
+  text-align: center;
+  bottom: 0px;
+  width: 100%;
+  padding-bottom: 300px;
+  position: fixed;
+}
+
+.defeat_message {
+  color: #F08080;
+  text-align: center;
+  bottom: 0px;
+  width: 100%;
+  padding-bottom: 300px;
+  position: fixed;
+}
+
+a.play_again {
+  color: #A9A9A9;
+  text-align: center;
+  bottom: 0px;
+  width: 100%;
+  padding-bottom: 100px;
+  position: fixed;
+  font-family: 'Raleway', sans-serif;
+  text-decoration: none;
 }

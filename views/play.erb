@@ -1,18 +1,27 @@
 <form action="/result" method="post">
-  <h2 class="play_title">Okay <%= @game.player.name %>, please select your weapon</h2>
-  <div class="weapon_choices">
-  <label>
-    <input type="radio" name="weapon" value="<%= Game::CHOICES[0] %>">
-    <%= Game::CHOICES[0].capitalize %>
-  </label>
-  <label>
-    <input type="radio" name="weapon" value="<%= Game::CHOICES[1] %>">
-    <%= Game::CHOICES[1].capitalize %>
-  </label>
-  <label>
-    <input type="radio" name="weapon" value="<%= Game::CHOICES[2] %>">
-    <%= Game::CHOICES[2].capitalize %>
-  </label>
+  <h2 class="title">Okay <%= @game.player.name %>, please select your weapon:</h2>
+    <table class="center">
+      <tr>
+        <label>
+          <td>
+            <input type="radio" name="weapon" value="<%= Game::CHOICES[0] %>">
+            <%= Game::CHOICES[0].capitalize %>
+          </td>
+        </label>
+        <label>
+          <td>
+            <input type="radio" name="weapon" value="<%= Game::CHOICES[1] %>">
+            <%= Game::CHOICES[1].capitalize %>
+          </td>
+        </label>
+          <td>
+            <input type="radio" name="weapon" value="<%= Game::CHOICES[2] %>">
+            <%= Game::CHOICES[2].capitalize %> <br>
+          </td>
+        </label>
+      </tr>
+    </table>
+  <div class="play_button">
+    <input type="submit" class="btn btn-sdefault btn-primary" value="Let's do this!">
   </div>
-  <input type="submit" class="btn btn-sdefault btn-primary" value="Let's do this!">
 </form>

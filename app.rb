@@ -1,7 +1,11 @@
 require 'sinatra/base'
+require 'sinatra/flash'
 require './lib/game'
 
 class RPS < Sinatra::Base
+
+  enable :sessions
+  register Sinatra::Flash
 
   before do
     @game = Game.instance

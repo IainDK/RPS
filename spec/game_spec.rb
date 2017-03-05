@@ -31,7 +31,7 @@ describe Game do
   end
 
   it "defaults the name of player_2 to 'Computer' " do
-      expect(game.computer.name).to eq 'Computer'
+      expect(game.computer.name).to eq 'The Computer'
   end
 
   describe 'outcome' do
