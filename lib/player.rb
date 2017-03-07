@@ -4,7 +4,6 @@ class Player
 
   def initialize(name = "Player")
     @name = name
-
   end
 
   def player_weapon(weapon)
