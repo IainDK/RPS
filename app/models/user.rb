@@ -11,6 +11,6 @@ class User
 
 end
 
-DataMapper.setup(:default, "postgres://localhost/rock_paper_scissors")
+DataMapper.setup(:default, "postgres://localhost/rock_paper_scissors_#{ENV['RACK_ENV']}")
 DataMapper.finalize
 DataMapper.auto_upgrade!
