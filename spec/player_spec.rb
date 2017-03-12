@@ -1,4 +1,4 @@
-require 'player'
+require './app/lib/player'
 
 describe Player do
 

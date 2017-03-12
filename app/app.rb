@@ -1,6 +1,9 @@
+ENV["RACK_ENV"] ||= "development"
+
 require 'sinatra/base'
 require 'sinatra/flash'
-require './lib/game'
+require './app/lib/game'
+require './app/models/user'
 
 class RPS < Sinatra::Base
 
@@ -24,6 +27,20 @@ class RPS < Sinatra::Base
   post '/result' do
     @game.player.player_weapon(params[:weapon].to_sym)
     erb(:result)
+  end
+
+  get '/users' do
+    @users = User.all
+    erb(:users)
+  end
+
+  get '/users/new' do
+    erb(:users_new)
+  end
+
+  post '/users' do
+    User.create(name: params[:name])
+    redirect '/users'
   end
 
   # start the server if ruby file executed directly
