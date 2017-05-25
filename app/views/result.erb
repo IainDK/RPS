@@ -1,7 +1,5 @@
-<h1 class="p1_vs_p2"><%= @game.player.name %> vs <%= @game.computer.name %></h2>
 <h2 class="player_chose"> You chose <%= @game.player.weapon.capitalize %></h2>
 <h2 class="computer_chose"><%= @game.computer.name %> chose <%= @game.computer.weapon.capitalize %></h2>
-<div style="clear: both;"></div>
 
 <% if @game.outcome == Game::POSSIBLE_OUTCOMES[0] %>
      <h2 class="victory_message"> Congratulations, you win!</h2>

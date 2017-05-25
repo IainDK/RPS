@@ -1,17 +1,13 @@
-<h1>Please sign up</h1>
-
-<form action='/users' method='post'>
-  <laber for='name'>
-    Name: <input name='name' type='text' value='<%= @user.name %>'>
-  </label>
-  <label for='email'>
-    Email: <input name='email' type='email' value='<%= @user.email %>' required>
-  </label>
-  <label for='password'>
-    Password: <input name='password' type='password'>
-  </label>
-  <label for='password_confirmation'>
-    Confirm Password: <input name='password_confirmation' type='password'>
-  </label>
+<h1 class=sign_up_header>Sign Up</h1>
+<div class=well>
+<form action='/users' method='post' class='sign_up_form'>
+    Name: <input name='name' type='text' value='<%= @user.name %>' required><br>
+    Email: <input name='email' type='email' value='<%= @user.email %>' required><br>
+    Password: <input name='password' type='password' required><br>
+    Confirm Password: <input name='password_confirmation' type='password' required><br>
   <input type='submit' value='Sign Up'>
 </form>
+</div>
+<div class=sign_in_redirect>
+  Already have an account? <a href="/sessions/new">Sign in.</a>
+</div>
