@@ -1,8 +1,12 @@
 class RPS < Sinatra::Base
 
   get '/users/new' do
-    @user = User.new
-    erb(:'users/new')
+    if current_user
+      redirect '/'
+    else
+      @user = User.new
+      erb(:'users/new')
+    end
   end
 
   post '/users' do
@@ -17,14 +21,6 @@ class RPS < Sinatra::Base
       flash.now[:errors] = @user.errors.full_messages
       erb(:'users/new')
     end
-  end
-
-  get '/users/recover' do
-      "Please enter your email address"
-  end
-
-  post '/users/recover' do
-    erb(:'users/acknowledgement')
   end
 
 end

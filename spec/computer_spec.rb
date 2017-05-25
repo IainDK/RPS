@@ -1,4 +1,4 @@
-require './app/lib/computer'
+require './app/models/computer'
 
 describe Computer do
 

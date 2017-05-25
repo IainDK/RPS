@@ -8,7 +8,7 @@ class User
   include DataMapper::Resource
 
   property :id,     Serial
-  property :name,   String
+  property :name,   String, required: true
   property :email,   String, required: true, unique: true
   property :password_digest, Text
   attr_reader :password
@@ -31,4 +31,7 @@ class User
     end
   end
 
+  def first_name
+    name.split(" ")[0]
+  end
 end

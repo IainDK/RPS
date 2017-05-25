@@ -4,7 +4,7 @@ require 'sinatra/base'
 require 'sinatra/flash'
 require 'sinatra/partial'
 require_relative 'server'
-require_relative 'lib/game'
+require_relative 'models/game'
 require_relative 'models/user'
 require_relative 'controllers/users'
 require_relative 'controllers/sessions'
@@ -17,7 +17,11 @@ class RPS < Sinatra::Base
   end
 
   get '/' do
-    erb(:index)
+    if current_user
+      erb(:index)
+    else
+      redirect '/users/new'
+    end
   end
 
   post '/play' do

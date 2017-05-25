@@ -23,13 +23,8 @@ table.center {
    padding-bottom: 100px;
  }
 
-.input_name_button {
-  position: fixed;
+.new_game_button {
   text-align: center;
-  top: 50%;
-  left: 50%;
-  margin-top: -50px;
-  margin-left: -100px;
 }
 
 .play_button {
@@ -47,42 +42,33 @@ table.center {
 
 .player_chose {
   color: #6495ED;
-  float: left;
-  padding-left: 200px;
+  text-align: center;
+  padding-top: 60px;
 }
 
 
 .computer_chose {
   color: #FFA07A;
-  float: right;
-  padding-right: 50px;
+  text-align: center;
+  padding-bottom: 80px;
 }
 
 .victory_message {
   color: #8FBC8F;
   text-align: center;
-  bottom: 0px;
-  width: 100%;
   padding-bottom: 300px;
-  position: fixed;
 }
 
 .tie_message {
-  color: #FFDEAD;
+  color: #F0E68C;
   text-align: center;
-  bottom: 0px;
-  width: 100%;
   padding-bottom: 300px;
-  position: fixed;
 }
 
 .defeat_message {
   color: #F08080;
   text-align: center;
-  bottom: 0px;
-  width: 100%;
   padding-bottom: 300px;
-  position: fixed;
 }
 
 a.play_again {
@@ -94,4 +80,20 @@ a.play_again {
   position: fixed;
   font-family: 'Raleway', sans-serif;
   text-decoration: none;
+}
+
+.sign_up_header {
+  padding-top: 40px;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  color: #6495ED;
+  padding-bottom: 50px;
+}
+
+.sign_up_form {
+  text-align: center;
+}
+
+.sign_in_redirect {
+  text-align: center;
 }
