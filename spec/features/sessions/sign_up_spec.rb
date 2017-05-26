@@ -21,7 +21,7 @@ require 'spec_helper'
       click_button 'Sign Up'
       expect(page.status_code).to eq(200)
       expect(User.count).to eq 1
-      expect(page).to have_content 'Welcome, Iain'
+      expect(page).to have_content 'Rock Paper Scissors'
       expect(User.first.email).to eq('iain@example.com')
     end
 
