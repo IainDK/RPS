@@ -25,13 +25,13 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
-    player = Player.new(params[:name])
-    @game = Game.create(player)
+    user = current_user
+    @game = Game.create(user)
     erb(:play)
   end
 
   post '/result' do
-    @game.player.player_weapon(params[:weapon].to_sym)
+    @game.user.user_weapon(params[:weapon].to_sym)
     erb(:result)
   end
 

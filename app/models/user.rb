@@ -5,6 +5,8 @@ require 'dm-postgres-adapter'
 
 class User
 
+  attr_reader :weapon
+
   include DataMapper::Resource
 
   property :id,     Serial
@@ -29,6 +31,10 @@ class User
     else
       nil
     end
+  end
+
+  def user_weapon(weapon)
+    @weapon = weapon
   end
 
   def first_name

@@ -1,5 +1,5 @@
-require_relative 'player'
 require_relative 'computer'
+require_relative 'user'
 
 class Game
 
@@ -12,7 +12,7 @@ class Game
               :scissors => {:rock => :lose, :paper => :win, :scissors => :draw}
             }
 
-  attr_reader :player, :computer
+  attr_reader :player, :computer, :user
 
   def self.instance
     @game
@@ -22,12 +22,12 @@ class Game
     @game = Game.new(player)
   end
 
-  def initialize(player = Player.new, computer = Computer.new)
-    @player = player
+  def initialize(user, computer = Computer.new)
     @computer = computer
+    @user = user
   end
 
   def outcome
-    RESULTS[player.weapon][computer.weapon]
+    RESULTS[user.weapon][computer.weapon]
   end
 end

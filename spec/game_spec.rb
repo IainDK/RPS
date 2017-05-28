@@ -2,7 +2,8 @@ require './app/models/game'
 
 describe Game do
 
-  let(:game) { (Game.new) }
+  user = User.new
+  let(:game) { (Game.new(user)) }
 
   it 'lists all available choices' do
     expect(Game::CHOICES).to eq [:rock, :paper, :scissors]
@@ -26,10 +27,6 @@ describe Game do
     expect(Game::RESULTS[:scissors][:scissors]).to eq :draw
   end
 
-  it "defaults the name of player_1 to 'Player 1' " do
-      expect(game.player.name).to eq('Player')
-  end
-
   it "defaults the name of player_2 to 'Computer' " do
       expect(game.computer.name).to eq 'The Computer'
   end
@@ -37,55 +34,55 @@ describe Game do
   describe 'outcome' do
 
   it "returns a draw when both players select rock" do
-    allow(game.player).to receive(:weapon).and_return(:rock)
+    allow(game.user).to receive(:weapon).and_return(:rock)
     allow(game.computer).to receive(:weapon).and_return(:rock)
     expect(game.outcome).to eq :draw
   end
 
   it "returns a loss when player_1 selects rock and the computer selects paper" do
-    allow(game.player).to receive(:weapon).and_return(:rock)
+    allow(game.user).to receive(:weapon).and_return(:rock)
     allow(game.computer).to receive(:weapon) { :paper }
     expect(game.outcome).to eq :lose
   end
 
   it "returns a win when player_1 selects rock and the computer selects scissors" do
-    allow(game.player).to receive(:weapon).and_return(:rock)
+    allow(game.user).to receive(:weapon).and_return(:rock)
     allow(game.computer).to receive(:weapon).and_return(:scissors)
     expect(game.outcome).to eq :win
   end
 
   it "returns a win when the player selects paper and the computer selects rock" do
-    allow(game.player).to receive(:weapon).and_return(:paper)
+    allow(game.user).to receive(:weapon).and_return(:paper)
     allow(game.computer).to receive(:weapon).and_return(:rock)
     expect(game.outcome).to eq :win
   end
 
   it "returns a draw when both players select paper" do
-    allow(game.player).to receive(:weapon).and_return(:paper)
+    allow(game.user).to receive(:weapon).and_return(:paper)
     allow(game.computer).to receive(:weapon).and_return(:paper)
     expect(game.outcome).to eq :draw
   end
 
   it "returns a loss when the player selects paper and the computer selects scissors" do
-    allow(game.player).to receive(:weapon).and_return(:paper)
+    allow(game.user).to receive(:weapon).and_return(:paper)
     allow(game.computer).to receive(:weapon).and_return(:scissors)
     expect(game.outcome).to eq :lose
   end
 
   it "returns a loss when the player selects scissors and the computer selects rock" do
-    allow(game.player).to receive(:weapon).and_return(:scissors)
+    allow(game.user).to receive(:weapon).and_return(:scissors)
     allow(game.computer).to receive(:weapon).and_return(:rock)
     expect(game.outcome).to eq :lose
   end
 
   it "returns a win when the player selects scissors and the computer selects paper" do
-    allow(game.player).to receive(:weapon).and_return(:scissors)
+    allow(game.user).to receive(:weapon).and_return(:scissors)
     allow(game.computer).to receive(:weapon).and_return(:paper)
     expect(game.outcome).to eq :win
   end
 
   it "returns a draw when both players select scissors" do
-    allow(game.player).to receive(:weapon).and_return(:scissors)
+    allow(game.user).to receive(:weapon).and_return(:scissors)
     allow(game.computer).to receive(:weapon).and_return(:scissors)
     expect(game.outcome).to eq :draw
   end

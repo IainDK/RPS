@@ -1,4 +1,4 @@
-<h2 class="player_chose"> You chose <%= @game.player.weapon.capitalize %></h2>
+<h2 class="player_chose"> You chose <%= @game.user.weapon.capitalize %></h2>
 <h2 class="computer_chose"><%= @game.computer.name %> chose <%= @game.computer.weapon.capitalize %></h2>
 
 <% if @game.outcome == Game::POSSIBLE_OUTCOMES[0] %>
