@@ -23,4 +23,15 @@ class RPS < Sinatra::Base
     end
   end
 
+  get '/users/:id' do
+    @user_id = User.get(params[:id])
+    if @user_id
+      @victories = Victory.all(:user => @user_id)
+      @draws = Draw.all(:user => @user_id)
+      @defeats = Defeat.all(:user => @user_id)
+      erb(:'users/id')
+    else
+      erb(:'users/error')
+    end
+  end
 end

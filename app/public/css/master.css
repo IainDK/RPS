@@ -10,11 +10,6 @@ input[type="radio"]{
   margin: 0 5px 0 10px;
 }
 
-table.center {
-    margin-left:auto;
-    margin-right:auto;
-    }
-
  .title {
    padding-top: 40px;
    text-align: center;
@@ -96,4 +91,24 @@ a.play_again {
 
 .sign_in_redirect {
   text-align: center;
+}
+
+.home_or_ran_user {
+  text-align: center;
+}
+
+table, td, th {
+    border: 1px solid #ddd;
+    text-align: center;
+    color: 	#696969
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #F0F8FF
+}
+
+th, td {
+    padding: 15px;
 }

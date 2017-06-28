@@ -2,6 +2,7 @@ require 'rubygems'
 require 'bcrypt'
 require 'data_mapper'
 require 'dm-postgres-adapter'
+require_relative 'victory'
 
 class User
 
@@ -18,6 +19,8 @@ class User
 
   validates_confirmation_of :password
   validates_format_of :email, as: :email_address
+
+  has n, :victories, :defeats, :draws
 
   def password=(password)
     @password = password

@@ -6,6 +6,8 @@ require 'sinatra/partial'
 require_relative 'server'
 require_relative 'models/game'
 require_relative 'models/user'
+require_relative 'models/defeat'
+require_relative 'models/draw'
 require_relative 'controllers/users'
 require_relative 'controllers/sessions'
 require_relative 'datamapper_setup'
@@ -20,7 +22,7 @@ class RPS < Sinatra::Base
     if current_user
       erb(:index)
     else
-      redirect '/users/new'
+      redirect '/sessions/new'
     end
   end
 

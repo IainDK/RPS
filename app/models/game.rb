@@ -1,5 +1,6 @@
 require_relative 'computer'
 require_relative 'user'
+require_relative 'victory'
 
 class Game
 
@@ -18,8 +19,8 @@ class Game
     @game
   end
 
-  def self.create(player)
-    @game = Game.new(player)
+  def self.create(user)
+    @game = Game.new(user)
   end
 
   def initialize(user, computer = Computer.new)
@@ -28,6 +29,6 @@ class Game
   end
 
   def outcome
-    RESULTS[user.weapon][computer.weapon]
+      RESULTS[user.weapon][computer.weapon]
   end
 end
