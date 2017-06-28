@@ -1,19 +1,35 @@
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.css">
     <link rel="stylesheet" type="text/css" href="/css/master.css">
   </head>
+
   <body>
+    <% if current_user %>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand active" href="/">RPS</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/users/<%= current_user.id %>"><span class="glyphicon glyphicon-user"></span> <%= current_user.name %></a></li>
+      <li><a href="/sessions/delete"><span class="glyphicon glyphicon-off"></span> Sign Out</a></li>
+    </ul>
+  </div>
+</nav>
+  <% end %>
 
     <%= partial :flash %>
 
+<!-- Alternative Sign Out
     <% if current_user %>
       <form method='post' action='/sessions'>
         <input type='hidden' name='_method' value='delete'>
         <input type='submit' value='Sign out'>
       </form>
     <% end %>
+-->
 
     <% if flash[:notice] %>
       <div id='notice'><%= flash[:notice] %></div>
@@ -23,8 +39,8 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.12.4.min.js"><\/script>')</script>
+    <script src="/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>

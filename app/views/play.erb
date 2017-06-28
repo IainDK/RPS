@@ -4,7 +4,7 @@
       <tr>
         <label>
           <td>
-            <input type="radio" name="weapon" value="<%= Game::CHOICES[0] %>">
+            <input type="radio" name="weapon" checked="checked" value="<%= Game::CHOICES[0] %>">
             <%= Game::CHOICES[0].capitalize %>
           </td>
         </label>
@@ -22,6 +22,18 @@
       </tr>
     </table>
   <div class="play_button">
-    <input type="submit" class="btn btn-sdefault btn-primary" value="Let's do this!">
+    <input type="submit" id="submit" class="btn btn-sdefault btn-primary" value="Let's do this!">
   </div>
 </form>
+
+<!-- Hover Script
+<script>
+var e = document.getElementById('demo');
+e.onmouseover = function() {
+  document.getElementById('popup').style.display = 'block';
+}
+e.onmouseout = function() {
+  document.getElementById('popup').style.display = 'none';
+}
+</script>
+-->

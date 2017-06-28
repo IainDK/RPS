@@ -19,9 +19,16 @@ class RPS < Sinatra::Base
     end
   end
 
+  get '/sessions/delete' do
+    session.destroy
+    redirect '/'
+  end
+end
+
+=begin
   delete '/sessions' do
     session[:user_id] = nil
     flash.keep[:notice] = 'goodbye!'
     redirect to '/sessions/new'
   end
-end
+=end

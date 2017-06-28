@@ -30,29 +30,44 @@ feature 'User sign in' do
 feature 'Whilst signed in' do
 
   let!(:user) do
-    User.create(name: 'Kirsty',
+    User.create(name: 'Kirsty M',
                 email: 'kirsty@example.com',
                 password: 'orange',
                 password_confirmation: 'orange')
   end
 
+  before do
+      sign_in(email: user.email, password: user.password)
+  end
+
+  scenario 'User can access the nav bar' do
+    expect(page).to have_content "RPS"
+    expect(page).to have_content "Kirsty M"
+    expect(page).to have_content "Sign Out"
+  end
+
+  scenario 'User can return to the home page' do
+    click_link 'RPS'
+    expect(current_path).to eq '/'
+  end
+
+  scenario 'User can view their own profile' do
+    click_link 'Kirsty M'
+    expect(current_path).to eq "/users/""#{user.id}"
+  end
+
   scenario 'User can sign out' do
-    sign_in(email: user.email, password: user.password)
-    click_button 'Sign out'
-    expect(page).to have_content('goodbye!')
+    click_link 'Sign Out'
     expect(current_path).to eq '/sessions/new'
   end
 
   scenario 'User cannot acces the sign-in page' do
-    sign_in(email: user.email, password: user.password)
     visit '/sessions/new'
     expect(current_path).to eq '/'
   end
 
   scenario 'User cannot acces the sign-up page' do
-    sign_in(email: user.email, password: user.password)
     visit '/users/new'
     expect(current_path).to eq '/'
   end
-
 end

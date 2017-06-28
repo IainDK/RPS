@@ -1,0 +1,30 @@
+<h2 class="title"><%= @user_id.name %> </h2><br>
+
+<div class=table_01>
+  <table>
+    <tr>
+      <th>Games Played</th>
+      <th>Wins</th>
+      <th>Draws</th>
+      <th>Losses</th>
+      <th>W/L Ratio</th>
+      <th>Win Percentage</th>
+    </tr>
+    <tr>
+      <td><%= @victories.count + @draws.count + @defeats.count %></td>
+      <td><%= @victories.count %></td>
+      <td><%= @draws.count %></td>
+      <td><%= @defeats.count %></td>
+      <td><% if @defeats.count == 0 %>
+              <%= @victories.count.to_f %>
+          <% else %>
+              <%= (@victories.count.to_f / @defeats.count.to_f).round(2) %>
+          <% end %></td>
+      <td><% if @victories.count == 0 %>
+              <%= @victories.count %>%
+          <% else %>
+              <%= ((@victories.count.to_f / (@victories.count.to_f + @draws.count.to_f + @defeats.count.to_f)) * 100).round %>%
+          <% end %></td>
+    </tr>
+  </table>
+</div>
