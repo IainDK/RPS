@@ -104,3 +104,21 @@ feature "it displays the user's statistics" do
     expect(table).to have_content('3 1 1 1 1.0 33%')
   end
 end
+
+feature "when visiting a profile that doesn't exist" do
+
+  let!(:user) do
+    User.create(name: 'Crumbles McHam',
+                email: 'crumblesmcham@example.com',
+                password: 'secret',
+                password_confirmation: 'secret')
+  end
+
+  scenario "user is told no such player exists" do
+    fake_user = user.id + 1
+    sign_in(email: user.email, password: user.password)
+    visit "/users/""#{fake_user}"
+    expect(page).to have_content "This user does not exist."
+    expect(page).to have_content "Return Home"
+  end
+end
