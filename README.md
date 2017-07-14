@@ -25,6 +25,7 @@ They will then be redirected to a screen that displays the outcome of the game, 
 ![game-outcomes](http://i.imgur.com/ytSR5iL.png "Game Outcome")
 
 Lastly, users can view their stats by visiting their profile page.
-Note: W/L ratio does take draws into consideration.
 
-![stats-page](http://i.imgur.com/dsEL1sP.png "Stats Page")
+Note: W/L ratio does not take draws into consideration.
+
+![stats-page](http://i.imgur.com/Gp7eWcY.png "Stats Page")
