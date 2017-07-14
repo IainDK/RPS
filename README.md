@@ -14,11 +14,11 @@ Users can sign-up and sign-in.
 
 Once signed-in, users will be redirected to the home screen, where they can start a new game.
 
-![home-screen](http://i.imgur.com/GmBUC7w.png "Home Screen")
+![home-screen](http://i.imgur.com/oBmcv0j.png "Home Screen")
 
 When a user begins a new game, they will be prompted to choose their weapon.
 
-![choose-weapon](http://i.imgur.com/BoKeg4f.png "Choose Weapon")
+![choose-weapon](http://i.imgur.com/xr2YYgZ.png "Choose Weapon")
 
 They will then be redirected to a screen that displays the outcome of the game, along with the option to play again.
 
